@@ -1,0 +1,24 @@
+#include <iostream>
+using std::cout;
+using std::cin;
+
+int main() 
+{
+    int fibCap = 0;
+    int fibStart = 1;
+    int fibNext = 0;
+    int fibSeq = 0;
+
+    cout << " What number do you want you fibonacci sequence to go to: ";
+    cin >> fibCap;
+
+    while (fibCap > 0 && fibSeq < fibCap){
+        fibSeq = fibStart + fibNext;
+        fibStart = fibNext;
+        fibNext = fibSeq;
+        if (fibSeq < fibCap){
+            cout << fibSeq << ", ";
+        }
+    } 
+}
+
