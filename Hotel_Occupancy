@@ -1,0 +1,47 @@
+#include <iostream>
+using std::cout;
+using std::cin;
+
+int main() 
+{
+    int rooms = 0;
+    float totalRooms = 0.0F;
+    int floors = 0;
+    int occupiedRooms = 0;
+    float totalOccupied = 0.0F;
+    int unoccupiedRooms = 0;
+    float percentOccupied = 0.0F;
+
+    cout << "How many floors does the hotel have?";
+    cin >> floors;
+
+    while (floors < 1){
+        cout << "Invalid number of floors. \n";
+        cout << "Please enter a valid amount of floors the hotel has";
+        cin >> floors;
+    }
+    for (int i = 1; i <= floors; i++){
+
+        if (i != 13) {
+            cout << "How many rooms are there on floor " << i << ": ";
+            cin >> rooms;
+                while (rooms < 10){
+                    cout << "Invalid # of rooms. \n" << "Please enter a valid number of rooms the floor has:";
+                    cin >> rooms;
+                }
+            totalRooms += rooms;
+            cout << "How many rooms on floor " << i << " are occupied: ";
+            cin >> occupiedRooms;
+            totalOccupied += occupiedRooms;
+        }
+
+    }
+        percentOccupied = totalOccupied/totalRooms;
+        cout << "****Hotel Occupancy Report****\n";
+        cout << "The hotel has : " << floors << " floors\n";
+        cout << "The hotel has : " << totalRooms << " total rooms\n";
+        cout << "The hotel is " << percentOccupied * 100 << "% occupied";
+
+
+
+}
